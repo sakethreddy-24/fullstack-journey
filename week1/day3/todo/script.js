@@ -3,7 +3,11 @@ const addBtn = document.getElementById("add-btn");
 const todoList = document.getElementById("todo-list");
 const countText = document.getElementById("count");
 
-const todos = [];
+const todos = JSON.parse(localStorage.getItem("todos")) || [];
+
+const saveTodos = () => {
+  localStorage.setItem("todos", JSON.stringify(todos));
+};
 
 const renderList = () => {
     todoList.innerHTML = "";
@@ -27,6 +31,7 @@ const renderList = () => {
 
          completeBtn.addEventListener("click", () =>{
             todos[index].completed = !todos[index].completed;
+            saveTodos();
             renderList();
          });
 
@@ -35,6 +40,7 @@ const renderList = () => {
 
           deleteBtn.addEventListener("click", () =>{
             todos.splice(index,1);
+            saveTodos();
             renderList();
          });
 
@@ -51,6 +57,7 @@ addBtn.addEventListener("click", () =>{
     if(text === "") return;
 
     todos.push({text: text, completed: false});
+    saveTodos();
     todoInput.value = "";
     renderList();
 });
@@ -60,3 +67,7 @@ addBtn.addEventListener("click", () =>{
  });
 
  renderList();
+ 
+
+
+

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Notes App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app">
+        
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h2>📝 Notes</h2>
+                <button id="new-btn">+ New</button>
+            </div>
+            <ul id="notes-list"></ul>
+        </div>
+
+        <div class="editor">
+            <div class="editor-header">
+                <input type="text" id="note-title" placeholder="Note title....">
+                <button id="delete-btn">🗑 Delete</button>
+            </div>
+            <textarea id="note-body" placeholder="start writing...."></textarea>
+            <div id="saved-msg"></div>
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
