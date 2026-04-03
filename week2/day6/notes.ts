@@ -1,15 +1,12 @@
-// Define the shape of a Note
 interface Note {
   id: string;
   title: string;
   body: string;
 }
 
-// Type the state
 let notes: Note[] = JSON.parse(localStorage.getItem("notes") || "[]");
 let activeId: string | null = notes.length > 0 ? notes[0].id : null;
 
-// Type the DOM elements
 const newBtn = document.getElementById("new-btn") as HTMLButtonElement;
 const deleteBtn = document.getElementById("delete-btn") as HTMLButtonElement;
 const notesList = document.getElementById("notes-list") as HTMLUListElement;
@@ -17,7 +14,6 @@ const noteTitle = document.getElementById("note-title") as HTMLInputElement;
 const noteBody = document.getElementById("note-body") as HTMLTextAreaElement;
 const savedMsg = document.getElementById("saved-msg") as HTMLDivElement;
 
-// Type the functions
 const saveNotes = (): void => {
   localStorage.setItem("notes", JSON.stringify(notes));
 };
