@@ -26,3 +26,4 @@ JavaScript · TypeScript · HTML · CSS · Git
 
 ## How to Run
 Open any project folder → right click index.html → Open with Live Server
+

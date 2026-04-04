@@ -36,7 +36,7 @@ class BankAccount {
     }
 }
 
-//2.
+//2. 
 
 const account1 = new BankAccount("Alice", 1000);
 const account2 = new BankAccount("Bob", 500);
